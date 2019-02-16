@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Grant
+Build-Jdk: 10.0.1
+Implementation-Title: levels-beyond-assessment
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.granthc
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/levels-beyond-assessment
+Created-By: Maven Integration for Eclipse
+
