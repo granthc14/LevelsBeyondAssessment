@@ -29,6 +29,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		 <dependency>
+	      <groupId>granthc</groupId>
+	      <artifactId>sqlite</artifactId>
+	      <version>3.23.1</version>
+	      <scope>compile</scope>
+	    </dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -42,7 +51,7 @@
 			    <artifactId>frontend-maven-plugin</artifactId>
 			    <version>1.6</version>
 			    <configuration>
-			        <workingDirectory>frontend</workingDirectory>
+			        <workingDirectory>levels-beyond-frontend</workingDirectory>
 			        <installDirectory>target</installDirectory>
 			    </configuration>
 			    <executions>
@@ -84,7 +93,7 @@
 			            <configuration>
 			                <target>
 			                    <copy todir="${project.build.directory}/classes/public">
-			                        <fileset dir="${project.basedir}/frontend/build"/>
+			                        <fileset dir="${project.basedir}/levels-beyond-frontend/build"/>
 			                    </copy>
 			                </target>
 			            </configuration>
@@ -94,6 +103,24 @@
 			        </execution>
 			    </executions>
 			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-dependency-plugin</artifactId>
+			    <executions>
+			      <execution>
+			        <id>copy-dependencies</id>
+			        <phase>package</phase>
+			        <goals>
+			          <goal>copy-dependencies</goal>
+			        </goals>
+			        <configuration>
+			          <outputDirectory>${project.build.directory}</outputDirectory>
+			          <overWriteReleases>true</overWriteReleases>
+			          <overWriteSnapshots>true</overWriteSnapshots>
+			        </configuration>
+			      </execution>
+			    </executions>
+			  </plugin>
 		</plugins>
 	
 	</build>
