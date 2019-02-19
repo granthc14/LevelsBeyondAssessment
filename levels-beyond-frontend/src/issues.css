@@ -1,0 +1,13 @@
+tr {
+  height:100px;
+  border-bottom: 2px solid black;
+}
+
+.issuesTable {
+  text-align: left;
+  margin-left:10px;
+}
+
+.body {
+  column-span: all;
+}
